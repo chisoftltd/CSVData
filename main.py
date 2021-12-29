@@ -1,6 +1,6 @@
-import pandas as pd
+import csv
 
-data = pd.read_csv("weather_data.csv")
-print(data)
-print(data.head())
-print(data.dtypes)
+with open("weather_data.csv") as data_file:
+    data = csv.reader(data_file)
+    for row in data:
+        print(row)
